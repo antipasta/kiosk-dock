@@ -8,7 +8,7 @@
   "minAppVersion": "2026.10.42",
   "entryClass": "com.github.antipasta.kioskdock.KioskDockPlugin",
   "description": "Slide-out dock for Kiosk Satellite. Displays real app icons in a floating edge shelf with auto-return.",
-  "author": "Community",
+  "author": "antipasta",
   "license": "Apache-2.0",
   "capabilities": [
     "overlay",
