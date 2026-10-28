@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "apiVersion": 1,
+  "id": "kiosk-dock",
+  "name": "Kiosk Dock",
+  "version": "1.0.0",
+  "minAndroidSdk": 24,
+  "minAppVersion": "2026.10.42",
+  "entryClass": "com.github.antipasta.kioskdock.KioskDockPlugin",
+  "description": "Slide-out dock for Kiosk Satellite. Displays real app icons in a floating edge shelf with auto-return.",
+  "author": "Community",
+  "license": "Apache-2.0",
+  "capabilities": [
+    "overlay",
+    "host.read",
+    "host.control"
+  ],
+  "settings": [
+    {
+      "key": "position",
+      "type": "select",
+      "title": "Dock Position",
+      "default": "Middle Right",
+      "options": [
+        "Middle Right",
+        "Upper Right",
+        "Lower Right",
+        "Middle Left",
+        "Upper Left",
+        "Lower Left",
+        "Bottom Center",
+        "Bottom Left",
+        "Bottom Right",
+        "Top Center",
+        "Top Left",
+        "Top Right"
+      ],
+      "description": "Choose which screen edge and alignment the dock lives on."
+    },
+    {
+      "key": "alwaysShow",
+      "type": "boolean",
+      "title": "Always Show Dock",
+      "default": false,
+      "description": "Keep the dock continuously visible on screen instead of hiding behind an edge tab."
+    },
+    {
+      "key": "allApps",
+      "type": "boolean",
+      "title": "All Kiosk Apps",
+      "default": true,
+      "description": "Automatically show all apps configured in Kiosk Satellite App Launcher."
+    },
+    {
+      "key": "shortcuts",
+      "type": "list",
+      "title": "Custom App Selection",
+      "default": [],
+      "visibleWhen": { "key": "allApps", "equals": false },
+      "description": "Choose and reorder specific apps for the dock.",
+      "addTitle": "Add app",
+      "row": {
+        "title": "package"
+      },
+      "fields": [
+        {
+          "key": "package",
+          "type": "string",
+          "title": "App",
+          "choices": "plugin",
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "showHandle",
+      "type": "boolean",
+      "title": "Show Dock Edge",
+      "default": true,
+      "visibleWhen": { "key": "alwaysShow", "equals": false },
+      "description": "Show the frosted edge of the dock peeking from the screen edge to swipe or tap."
+    },
+    {
+      "key": "handleWidth",
+      "type": "number",
+      "title": "Pull Tab Width",
+      "default": 14,
+      "min": 6,
+      "max": 48,
+      "step": 2,
+      "unit": "dp",
+      "visibleWhen": { "key": "showHandle", "equals": true },
+      "description": "How many pixels (dp) of the dock peek out from the screen edge as a pull tab."
+    },
+    {
+      "key": "handleOffset",
+      "type": "number",
+      "title": "Position Offset",
+      "default": 0,
+      "min": -400,
+      "max": 400,
+      "step": 20,
+      "unit": "dp",
+      "description": "Fine-tune dock position along its edge (offset from center)."
+    },
+    {
+      "key": "dockWidth",
+      "type": "number",
+      "title": "Dock Width",
+      "default": 72,
+      "min": 56,
+      "max": 120,
+      "step": 4,
+      "unit": "dp",
+      "description": "Width of the dock shelf in dp (default 72dp for 48dp squircle icons)."
+    }
+  ],
+  "commands": [
+    {
+      "id": "toggleDock",
+      "title": "Toggle Kiosk Dock"
+    },
+    {
+      "id": "showDock",
+      "title": "Show Kiosk Dock"
+    },
+    {
+      "id": "hideDock",
+      "title": "Hide Kiosk Dock"
+    }
+  ]
+}
