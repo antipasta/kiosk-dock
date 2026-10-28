@@ -23,7 +23,7 @@ public final class KioskDockPlugin implements KioskPlugin {
     private DockPosition position = DockPosition.MIDDLE_RIGHT;
     private boolean alwaysShow = false;
     private boolean allApps = true;
-    private int dockWidth = 72;
+    private int iconSize = 48;
     private boolean showHandle = true;
     private int handleWidth = 14;
     private int handleOffset = 0;
@@ -53,9 +53,9 @@ public final class KioskDockPlugin implements KioskPlugin {
             allApps = (Boolean) allAppsVal;
         }
 
-        Object widthVal = settings.get("dockWidth");
-        if (widthVal instanceof Number) {
-            dockWidth = Math.max(56, Math.min(120, ((Number) widthVal).intValue()));
+        Object iconVal = settings.get("iconSize");
+        if (iconVal instanceof Number) {
+            iconSize = Math.max(36, Math.min(72, ((Number) iconVal).intValue()));
         }
 
         Object handleVal = settings.get("showHandle");
@@ -165,8 +165,9 @@ public final class KioskDockPlugin implements KioskPlugin {
         if (host == null) return;
         hideHandle();
         try {
-            int width = position.isVertical() ? dockWidth : OverlaySpec.WRAP;
-            int height = position.isVertical() ? OverlaySpec.WRAP : dockWidth;
+            int dockThickness = getDockThickness();
+            int width = position.isVertical() ? dockThickness : OverlaySpec.WRAP;
+            int height = position.isVertical() ? OverlaySpec.WRAP : dockThickness;
             int alignOffset = position.getAlignmentOffset();
             int offsetX = 0;
             int offsetY = 0;
@@ -201,7 +202,7 @@ public final class KioskDockPlugin implements KioskPlugin {
                 .closeOnOutsideTouch(!alwaysShow)
                 .closeOnBack(!alwaysShow);
 
-            host.showOverlay(OVERLAY_KEY, spec, new DockViewFactory(this, getActiveShortcuts(), position));
+            host.showOverlay(OVERLAY_KEY, spec, new DockViewFactory(this, getActiveShortcuts(), position, iconSize));
             isDockVisible = true;
         } catch (UnsupportedOperationException olderHost) {
             host.status("Native overlays require a newer Kiosk Satellite version.", true);
@@ -294,8 +295,8 @@ public final class KioskDockPlugin implements KioskPlugin {
 
     int calculateDockLength() {
         int count = getActiveShortcuts().size();
-        if (count == 0) return 76;
-        int len = count * 48 + (count - 1) * 10 + 28;
+        if (count == 0) return iconSize + 28;
+        int len = count * iconSize + (count - 1) * 10 + 28;
         return Math.min(800, len);
     }
 
@@ -362,7 +363,8 @@ public final class KioskDockPlugin implements KioskPlugin {
     synchronized DockPosition getPosition() { return position; }
     synchronized int getHandleWidth() { return handleWidth; }
     synchronized int getHandleOffset() { return handleOffset; }
-    synchronized int getDockWidth() { return dockWidth; }
+    synchronized int getIconSize() { return iconSize; }
+    synchronized int getDockThickness() { return iconSize + 24; }
     synchronized List<ShortcutItem> getShortcuts() { return new ArrayList<>(shortcuts); }
     synchronized List<ShortcutItem> getLauncherApps() { return new ArrayList<>(launcherApps); }
 }

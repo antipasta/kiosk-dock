@@ -104,15 +104,15 @@
       "description": "Fine-tune dock position along its edge (offset from center)."
     },
     {
-      "key": "dockWidth",
+      "key": "iconSize",
       "type": "number",
-      "title": "Dock Width",
-      "default": 72,
-      "min": 56,
-      "max": 120,
+      "title": "Icon Size",
+      "default": 48,
+      "min": 36,
+      "max": 72,
       "step": 4,
       "unit": "dp",
-      "description": "Width of the dock shelf in dp (default 72dp for 48dp squircle icons)."
+      "description": "Size of app icons in dp. The dock shelf thickness automatically scales to fit."
     }
   ],
   "commands": [

@@ -46,7 +46,7 @@ Kiosk Satellite enforces a kiosk security boundary so that only approved apps ca
    - Open **Settings > Plugin Manager > Kiosk Dock**.
    - Turn off **All Kiosk Apps**.
    - Tap **Add app** under **Custom App Selection** and select an app from the list.
-5. (Optional) Adjust **Pull Tab Width** (how many pixels peek out), **Position Offset** (fine-tuning along the edge), or **Dock Width**.
+5. (Optional) Adjust **Pull Tab Width** (how many pixels peek out), **Position Offset** (fine-tuning along the edge), or **Icon Size**.
 
 ### 3. Open the Dock
 - **Via Peeking Edge**: Tap or swipe inward from the bezel directly on the peeking frosted edge of the dock.
@@ -64,7 +64,7 @@ Kiosk Satellite enforces a kiosk security boundary so that only approved apps ca
 | `showHandle` | Boolean | `true` | Show the frosted edge of the dock peeking from the screen edge (when not in always-show mode). |
 | `handleWidth` | Number | `14` | How many pixels (dp) of the dock peek out from the screen edge as a pull tab (6 to 48 dp). |
 | `handleOffset`| Number | `0` | Fine-tune dock position along its edge (offset from center, -400 to 400 dp). |
-| `dockWidth` | Number | `72` | Width/thickness of the dock shelf in dp (56 to 120 dp, optimized for 48dp squircle icons). |
+| `iconSize` | Number | `48` | Size of app icons in dp (36 to 72 dp). The dock shelf automatically scales to fit. |
 
 ## Actions & Commands
 

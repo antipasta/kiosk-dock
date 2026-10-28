@@ -34,11 +34,13 @@ final class DockViewFactory implements OverlayFactory {
     private final KioskDockPlugin plugin;
     private final List<ShortcutItem> shortcuts;
     private final DockPosition position;
+    private final int iconSizeDp;
 
-    DockViewFactory(KioskDockPlugin plugin, List<ShortcutItem> shortcuts, DockPosition position) {
+    DockViewFactory(KioskDockPlugin plugin, List<ShortcutItem> shortcuts, DockPosition position, int iconSizeDp) {
         this.plugin = plugin;
         this.shortcuts = new ArrayList<>(shortcuts);
         this.position = position != null ? position : DockPosition.MIDDLE_RIGHT;
+        this.iconSizeDp = iconSizeDp > 0 ? iconSizeDp : 48;
     }
 
     @Override
@@ -46,7 +48,7 @@ final class DockViewFactory implements OverlayFactory {
         FrameLayout root = new FrameLayout(context);
         root.setClickable(true);
 
-        final int shelfRadius = theme.px(22);
+        final int shelfRadius = theme.px(Math.max(16, (iconSizeDp + 24) / 3));
         root.setOutlineProvider(new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
@@ -83,8 +85,8 @@ final class DockViewFactory implements OverlayFactory {
             dockList.setPadding(theme.px(12), theme.px(14), theme.px(12), theme.px(14));
         }
 
-        final int iconSizePx = theme.px(48);
-        final int squircleRadius = theme.px(11);
+        final int iconSizePx = theme.px(iconSizeDp);
+        final int squircleRadius = (int) Math.max(4, Math.round(iconSizePx * 0.23));
         final float density = context.getResources().getDisplayMetrics().density;
         final float swipeDismissDistance = 25 * density;
 

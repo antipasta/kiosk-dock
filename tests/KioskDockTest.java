@@ -87,7 +87,7 @@ public final class KioskDockTest {
         Map<String, Object> settings = new HashMap<>();
         settings.put("position", "Middle Right");
         settings.put("allApps", true);
-        settings.put("dockWidth", 80);
+        settings.put("iconSize", 48);
         settings.put("showHandle", true);
         settings.put("handleWidth", 16);
         settings.put("handleOffset", -40);
@@ -97,7 +97,8 @@ public final class KioskDockTest {
 
         assert plugin.isAllApps();
         assert plugin.getPosition() == DockPosition.MIDDLE_RIGHT;
-        assert plugin.getDockWidth() == 80;
+        assert plugin.getIconSize() == 48;
+        assert plugin.getDockThickness() == 72;
         assert plugin.isShowHandle();
         assert plugin.getHandleWidth() == 16;
         assert plugin.getHandleOffset() == -40;
@@ -130,7 +131,7 @@ public final class KioskDockTest {
 
         OverlaySpec dockSpec = host.shownOverlays.get(KioskDockPlugin.OVERLAY_KEY);
         assert OverlaySpec.RIGHT.equals(dockSpec.anchor());
-        assert dockSpec.width() == 80;
+        assert dockSpec.width() == 72;
         assert dockSpec.height() == OverlaySpec.WRAP;
         assert dockSpec.offsetX() == -8;
         assert dockSpec.offsetY() == -40;
@@ -198,7 +199,7 @@ public final class KioskDockTest {
         OverlaySpec bottomDockSpec = host.shownOverlays.get(KioskDockPlugin.OVERLAY_KEY);
         assert OverlaySpec.BOTTOM.equals(bottomDockSpec.anchor());
         assert bottomDockSpec.width() == OverlaySpec.WRAP;
-        assert bottomDockSpec.height() == 80;
+        assert bottomDockSpec.height() == 72;
         assert bottomDockSpec.offsetX() == 20;
         assert bottomDockSpec.offsetY() == -8; // 8dp offset up from bottom edge
         assert bottomDockSpec.insetBottom() == 0;
@@ -225,7 +226,7 @@ public final class KioskDockTest {
         plugin.showDock();
         OverlaySpec leftDockSpec = host.shownOverlays.get(KioskDockPlugin.OVERLAY_KEY);
         assert OverlaySpec.LEFT.equals(leftDockSpec.anchor()) : "Upper Left must anchor to LEFT so slide is horizontal";
-        assert leftDockSpec.width() == 80;
+        assert leftDockSpec.width() == 72;
         assert leftDockSpec.height() == OverlaySpec.WRAP;
         assert leftDockSpec.offsetX() == 8; // 8dp offset inward from left edge
         assert leftDockSpec.offsetY() == -2000;
