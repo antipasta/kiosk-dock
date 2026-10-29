@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "apiVersion": 1,
-  "id": "kiosk-dock",
-  "name": "Kiosk Dock",
+  "id": "dock",
+  "name": "Dock",
   "version": "1.0.0",
   "minAndroidSdk": 24,
   "minAppVersion": "2026.10.42",
@@ -118,15 +118,15 @@
   "commands": [
     {
       "id": "toggleDock",
-      "title": "Toggle Kiosk Dock"
+      "title": "Toggle Dock"
     },
     {
       "id": "showDock",
-      "title": "Show Kiosk Dock"
+      "title": "Show Dock"
     },
     {
       "id": "hideDock",
-      "title": "Hide Kiosk Dock"
+      "title": "Hide Dock"
     }
   ]
 }

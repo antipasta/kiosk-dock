@@ -1,4 +1,4 @@
-# Kiosk Dock
+# Dock
 
 A slide-out application dock for [Kiosk Satellite](https://github.com/jxlarrea/kiosk-satellite).
 
@@ -23,7 +23,7 @@ Launch your favorite Android applications directly from a floating translucent f
 1. Open **Settings > Plugin Manager** in Kiosk Satellite and turn on **Enable Plugins**.
 2. Choose **Add plugin**, paste `https://github.com/antipasta/kiosk-dock` and choose **Preview**.
 3. Review the plugin details and choose **Trust and install**.
-4. Enable **Kiosk Dock** from its entry row.
+4. Enable **Dock** from its entry row.
 
 *(Once added to the Community Plugins catalog, you can also install it via **Settings > Plugin Manager > Browse plugins**).*
 
@@ -43,15 +43,15 @@ Kiosk Satellite enforces a kiosk security boundary so that only approved apps ca
    - **Top Edge**: *Top Center*, *Top Left*, or *Top Right*
 3. **Always Show Dock**: Turn this ON to pin the dock permanently on your screen. Touches to the dashboard pass through, Back does not close it, and the pull tab is hidden.
 4. If you want a custom subset or specific ordering:
-   - Open **Settings > Plugin Manager > Kiosk Dock**.
+   - Open **Settings > Plugin Manager > Dock**.
    - Turn off **All Kiosk Apps**.
    - Tap **Add app** under **Custom App Selection** and select an app from the list.
 5. (Optional) Adjust **Pull Tab Width** (how many pixels peek out), **Position Offset** (fine-tuning along the edge), or **Icon Size**.
 
 ### 3. Open the Dock
 - **Via Peeking Edge**: Tap or swipe inward from the bezel directly on the peeking frosted edge of the dock.
-- **Via Gestures**: In **Settings > Gestures**, map a corner tap to **Run a plugin action > Kiosk Dock: Toggle Kiosk Dock**.
-- **Via Drawer**: In **Settings > Plugin Manager > Kiosk Dock**, tap **Toggle Kiosk Dock** and turn on **Show in kiosk drawer**.
+- **Via Gestures**: In **Settings > Gestures**, map a corner tap to **Run a plugin action > Dock: Toggle Dock**.
+- **Via Drawer**: In **Settings > Plugin Manager > Dock**, tap **Toggle Dock** and turn on **Show in kiosk drawer**.
 
 ## Settings Reference
 
@@ -68,14 +68,14 @@ Kiosk Satellite enforces a kiosk security boundary so that only approved apps ca
 
 ## Actions & Commands
 
-- **Toggle Kiosk Dock** (`toggleDock`): Opens the dock if closed, or closes it if open.
-- **Show Kiosk Dock** (`showDock`): Slides the dock into view.
-- **Hide Kiosk Dock** (`hideDock`): Slides the dock out to dismiss it.
+- **Toggle Dock** (`toggleDock`): Opens the dock if closed, or closes it if open.
+- **Show Dock** (`showDock`): Slides the dock into view.
+- **Hide Dock** (`hideDock`): Slides the dock out to dismiss it.
 
 ## Privacy & Local Data
 
-Kiosk Dock runs entirely on your device inside Kiosk Satellite.
-- **No Network Tracking**: Kiosk Dock makes zero external network requests.
+Dock runs entirely on your device inside Kiosk Satellite.
+- **No Network Tracking**: Dock makes zero external network requests.
 - **No Telemetry**: No analytics or usage data are collected.
 - **Local Storage**: All shortcut names and package preferences remain in Kiosk Satellite's local settings storage.
 

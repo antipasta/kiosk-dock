@@ -10,7 +10,7 @@ import me.jxl.kiosk.plugins.OverlaySpec;
 import me.jxl.kiosk.plugins.PluginHost;
 
 /**
- * Kiosk Dock plugin for Kiosk Satellite.
+ * Dock plugin for Kiosk Satellite.
  * Displays a floating dock shelf along any edge of the screen.
  * Supports auto-populating all apps from Kiosk Satellite App Launcher,
  * or choosing/reordering specific apps, with a seamless peeking frosted-glass edge handle.
@@ -260,7 +260,7 @@ public final class KioskDockPlugin implements KioskPlugin {
             if (!ok) {
                 if (host != null) {
                     host.status("Failed to launch " + packageName + ": " + error, true);
-                    host.log("Kiosk Dock launchApp error: " + error);
+                    host.log("Dock launchApp error: " + error);
                 }
             } else {
                 if (host != null) {
