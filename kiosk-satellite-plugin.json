@@ -4,6 +4,7 @@
   "id": "dock",
   "name": "Dock",
   "version": "1.0.0",
+  "icon": "icon.png",
   "minAndroidSdk": 24,
   "minAppVersion": "2026.10.42",
   "entryClass": "com.github.antipasta.kioskdock.KioskDockPlugin",

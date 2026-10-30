@@ -20,12 +20,20 @@ Launch your favorite Android applications directly from a floating translucent f
 
 ## Installation
 
+### Community Plugins (Recommended)
+
+Dock is listed in [Community Plugins](https://kiosksatellite.com/plugins/). Use the button below to open it in your Kiosk Satellite and install it.
+
+[![Install in Kiosk Satellite](https://kiosksatellite.com/img/badges/plugin-add.svg)](https://kiosksatellite.com/redirect/plugin/?repository=antipasta/kiosk-dock)
+
+Or search for `Dock` in **Settings > Plugin Manager > Browse plugins** in Kiosk Satellite.
+
+### Manual
+
 1. Open **Settings > Plugin Manager** in Kiosk Satellite and turn on **Enable Plugins**.
 2. Choose **Add plugin**, paste `https://github.com/antipasta/kiosk-dock` and choose **Preview**.
 3. Review the plugin details and choose **Trust and install**.
 4. Enable **Dock** from its entry row.
-
-*(Once added to the Community Plugins catalog, you can also install it via **Settings > Plugin Manager > Browse plugins**).*
 
 ## Configuration
 
